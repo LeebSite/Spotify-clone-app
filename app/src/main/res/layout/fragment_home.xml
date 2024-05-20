@@ -1,0 +1,347 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- Top Area -->
+    <RelativeLayout
+        android:id="@+id/topArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:padding="16dp">
+
+        <!-- Profile Image -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewProfile"
+            app:cardBackgroundColor="@color/black"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="18.5dp"
+            app:cardElevation="4dp">
+
+            <ImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:contentDescription="profile image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profil" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Page Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_toEndOf="@id/cardViewProfile"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAll"
+                android:layout_width="87dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@color/green_spotify"
+                android:fontFamily="@font/circular_a_medium"
+                android:text="Semua"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                app:cornerRadius="20dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonMusic"
+                android:layout_width="79dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@color/btn_page"
+                android:fontFamily="@font/circular_a_medium"
+                android:text="Musik"
+                android:textColor="@color/white"
+                android:textSize="11dp"
+                app:cornerRadius="20dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPodcast"
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:backgroundTint="@color/btn_page"
+                android:fontFamily="@font/circular_a_medium"
+                android:text="Podcast"
+                android:textColor="@color/white"
+                android:textSize="11dp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Content Area with Scroll -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Content Image -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="Album Recent Image"
+                android:src="@drawable/albumrecent" />
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/circular_a_semibold"
+                android:text="Baru saja didengar"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+            <!-- Recently Played Profiles -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Profile 1 -->
+                    <LinearLayout
+                        android:id="@+id/the1975"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:clipToOutline="true"
+                            android:contentDescription="Profile 1 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/the_1975"
+                            android:background="@drawable/rounded_corner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="The 1975"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Profile 2 -->
+                    <LinearLayout
+                        android:id="@+id/arcticmonkey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:contentDescription="Profile 2 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/arctic_monkeys"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:background="@drawable/rounded_corner" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="Arctic Monkeys"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Profile 3 -->
+                    <LinearLayout
+                        android:id="@+id/kendricklamar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:clipToOutline="true"
+                            android:contentDescription="Profile 3 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/kendrick_lamar"
+                            android:background="@drawable/rounded_corner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="Kendrick Lamar"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Favorite Artists -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/circular_a_semibold"
+                android:text="Artis Favoritmu"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Profile 1 -->
+                    <LinearLayout
+                        android:id="@+id/oneokrock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:clipToOutline="true"
+                            android:contentDescription="Profile 1 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/one_ok_rock"
+                            android:background="@drawable/rounded_corner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="ONE OK ROCK"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Profile 2 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/wavetoearth"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:clipToOutline="true"
+                            android:contentDescription="Profile 2 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/waveto_earth"
+                            android:background="@drawable/rounded_corner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="wave to earth"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Profile 3 -->
+                    <LinearLayout
+                        android:id="@+id/taylorswift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:clipToOutline="true"
+                            android:contentDescription="Profile 3 Image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/taylor_swift"
+                            android:background="@drawable/rounded_corner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/circular_a_regular"
+                            android:gravity="center"
+                            android:text="Taylor Swift"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
